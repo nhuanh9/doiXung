@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let palindrome = prompt("Nhap vao 1 tu: ");
+    do {
+        palindrome = prompt("Nhap vao 1 tu: ");
+    } while (palindrome === "");
+    function isPalindrome(word) {
+        let first = word.charAt(0);
+        let last = word.charAt(word.length-1);
+        if (first!==last){
+            return false;
+        }
+        if (word.length!==0){
+            return true;
+        }
+        word = word.slice(1,word.length-1);
+        return isPalindrome(word);
+    }
+    if (isPalindrome(palindrome)){
+        alert("Chuoi dao nguoc");
+    } else {
+        alert("Khong phai chuoi dao nguoc");
+    }
+</script>
+</body>
+</html>
